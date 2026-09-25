@@ -1,5 +1,5 @@
-import portrait from "@/assets/ian-gabriel-cutout.png";
-import signature from "@/assets/ian-gabriel-signature.png";
+import portrait from "@/assets/ian-gabriel-cutout.webp";
+import signature from "@/assets/ian-gabriel-signature.webp";
 import { useEffect, useRef, useState } from "react";
 
 function AboutSignature() {
