@@ -2858,19 +2858,23 @@
 @utility websites-gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: start;
+  align-items: stretch;
   gap: clamp(16px, 2vw, 24px);
 
   @media (min-width: 640px) and (max-width: 1023px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* Colunas proporcionais aos aspect ratios reais das imagens
+     (1.927 / 0.27 / 0.5625) para que as três ocupem a mesma altura */
   @media (min-width: 1024px) {
-    grid-template-columns: minmax(0, 1.56fr) minmax(0, 0.5fr) minmax(0, 0.68fr);
+    grid-template-columns: minmax(0, 1.927fr) minmax(0, 0.27fr) minmax(0, 0.5625fr);
   }
 }
 
-@utility websites-card-left {
+/* Regra comum (fora de @utility) — o Tailwind não emite utilities
+   que contêm apenas media queries */
+.websites-card-left {
   @media (min-width: 640px) and (max-width: 1023px) {
     grid-column: 1 / -1;
   }
@@ -2880,10 +2884,19 @@
   position: relative;
   display: flex;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 12px;
+
+  /* Altura única para a linha em tablet/desktop */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    height: clamp(300px, 42vw, 440px);
+  }
+
+  @media (min-width: 1024px) {
+    height: clamp(340px, 33vw, 430px);
+  }
   cursor: pointer;
   transition:
     transform 300ms ease,
@@ -2905,10 +2918,18 @@
 @utility websites-card-media {
   display: flex;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 12px;
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    height: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
 }
 
 @utility websites-card-img {
@@ -2917,6 +2938,17 @@
   height: auto;
   object-fit: contain;
   transition: transform 500ms ease-out;
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    height: 100%;
+  }
 
   .websites-card-shell:hover & {
     transform: scale(1.01);
