@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import logoAsset from "@/assets/logo-ian-gabriel-cropped.png";
-import portraitCutout from "@/assets/ian-portrait-cutout.png";
+import logoAsset from "@/assets/logo-ian-gabriel-cropped.webp";
+import portraitCutout from "@/assets/ian-portrait-cutout.webp";
 import { About } from "@/components-portfolio/About";
 import { Contact } from "@/components-portfolio/Contact";
 import { Projects } from "@/components-portfolio/Projects";

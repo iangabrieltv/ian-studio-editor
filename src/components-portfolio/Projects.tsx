@@ -2,16 +2,16 @@ import { useState, useRef, useEffect } from "react";
 import { ArrowRight, X, Sparkles, CheckCircle2 } from "lucide-react";
 
 // Imagens da Categoria 1: Apresentações Comerciais (Mantidas intactas)
-import herculanoImg from "@/assets/images/herculano_tech_cover.png";
-import distribuicaoImg from "@/assets/images/goiabada_popular_cover.png";
-import mediakitImg from "@/assets/images/mediakit_karateca_cover.png";
-import propostaImg from "@/assets/images/proposta_scale_visual_cover.png";
+import herculanoImg from "@/assets/images/herculano_tech_cover.webp";
+import distribuicaoImg from "@/assets/images/goiabada_popular_cover.webp";
+import mediakitImg from "@/assets/images/mediakit_karateca_cover.webp";
+import propostaImg from "@/assets/images/proposta_scale_visual_cover.webp";
 
 // Imagens da Categoria 2: Posts & Stories (La Vera Pizzaria e Redes Sociais)
 import post1Img from "@/assets/images/post_la_vera_1.webp";
 import post2Img from "@/assets/images/post_la_vera_2.webp";
 import post3Img from "@/assets/images/post_la_vera_3.webp";
-import post4Img from "@/assets/images/post_la_vera_4.png";
+import post4Img from "@/assets/images/post_la_vera_4.webp";
 import post5Img from "@/assets/images/post_la_vera_5.webp";
 import post6Img from "@/assets/images/post_la_vera_6.webp";
 import post7Img from "@/assets/images/post_la_vera_7.webp";
@@ -34,9 +34,9 @@ const agencia6Img = agencia6Asset;
 
 // Imagens da Categoria 4: Identidade Visual — Aura Estética (Exatamente 8 trabalhos na ordem fornecida)
 import aura1Asset from "@/assets/aura/aura-estetica-1.webp";
-import aura2Asset from "@/assets/aura/aura-estetica-2.png";
+import aura2Asset from "@/assets/aura/aura-estetica-2.webp";
 import aura3Asset from "@/assets/aura/aura-estetica-3.webp";
-import aura4Asset from "@/assets/aura/aura-estetica-4.png";
+import aura4Asset from "@/assets/aura/aura-estetica-4.webp";
 import aura5Asset from "@/assets/aura/aura-estetica-5.webp";
 import aura6Asset from "@/assets/aura/aura-estetica-6.webp";
 import aura7Asset from "@/assets/aura/aura-estetica-7.webp";

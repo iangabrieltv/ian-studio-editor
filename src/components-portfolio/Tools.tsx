@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import canvaAsset from "@/assets/images/canva-3d.png";
-import capcutAsset from "@/assets/images/capcut-3d.png";
-import aiAsset from "@/assets/images/ai-3d.png";
+import canvaAsset from "@/assets/images/canva-3d.webp";
+import capcutAsset from "@/assets/images/capcut-3d.webp";
+import aiAsset from "@/assets/images/ai-3d.webp";
 
 const toolItems = [
   { name: "Canva", src: canvaAsset, floatClass: "tool-float-1" },
