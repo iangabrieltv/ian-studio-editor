@@ -1409,6 +1409,7 @@
 
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 2vw, 28px);
   }
 
   .skills-title {
@@ -1422,8 +1423,8 @@
   }
 
   .skills-container {
-    width: min(90vw, 560px);
-    padding-block: 88px 96px;
+    width: min(92vw, 560px);
+    padding-block: 72px 78px;
   }
 
   .skills-kicker {
@@ -1433,30 +1434,68 @@
 
   .skills-title {
     margin-top: 16px;
-    font-size: clamp(40px, 11vw, 54px);
+    font-size: clamp(34px, 10vw, 46px);
     line-height: 1.04;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 22px;
-    margin-top: 42px;
+    gap: 14px;
+    margin-top: 30px;
   }
 
   .skills-card-shell {
-    aspect-ratio: 1.55 / 1;
+    aspect-ratio: auto;
+    min-height: 104px;
   }
 
   .skills-card-content {
-    padding: 28px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-content: center;
+    align-items: center;
+    column-gap: 16px;
+    padding: 16px 18px;
+  }
+
+  .skills-card-icon {
+    grid-row: 1 / span 2;
+    width: 28px;
+    height: 28px;
   }
 
   .skills-card-content h3 {
-    font-size: 24px;
+    margin: 0 0 4px;
+    font-size: 20px;
+    line-height: 1.1;
   }
 
   .skills-card-content p {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.28;
+  }
+}
+
+@media (max-width: 420px) {
+  .skills-grid {
+    gap: 12px;
+  }
+
+  .skills-card-shell {
+    min-height: 96px;
+  }
+
+  .skills-card-content {
+    column-gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .skills-card-content h3 {
+    font-size: 18px;
+  }
+
+  .skills-card-content p {
+    font-size: 12px;
   }
 }
 
@@ -2608,8 +2647,12 @@
    ======================================================= */
 @utility aura-gallery-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(16px, 2vw, 24px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 22px);
+
+  @media (max-width: 379px) {
+    grid-template-columns: 1fr;
+  }
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2673,7 +2716,7 @@
 @utility aura-card-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2711,18 +2754,18 @@
 @utility identity-asymmetric-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(16px, 2vw, 24px);
+  gap: clamp(14px, 1.7vw, 24px);
 
   @media (min-width: 860px) {
-    grid-template-columns: 0.699fr 1fr;
-    align-items: stretch;
+    grid-template-columns: minmax(0, 0.695fr) minmax(0, 1fr);
+    align-items: start;
   }
 }
 
 @utility identity-asymmetric-right-stack {
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 2vw, 24px);
+  gap: clamp(14px, 1.7vw, 24px);
   height: 100%;
 }
 
@@ -2806,6 +2849,77 @@
 
   .identity-asymmetric-card:hover & {
     transform: scale(1.02);
+  }
+}
+
+/* =======================================================
+   Projetos de Sites — três anexos proporcionais
+   ======================================================= */
+@utility websites-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: clamp(16px, 2vw, 24px);
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: minmax(0, 1.56fr) minmax(0, 0.5fr) minmax(0, 0.68fr);
+  }
+}
+
+@utility websites-card-left {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    grid-column: 1 / -1;
+  }
+}
+
+@utility websites-card-shell {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+  outline: none;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 12px 36px oklch(0.01 0.004 265 / 0.5),
+      0 0 24px oklch(0.59 0.23 255 / 0.2);
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px oklch(0.59 0.23 255), 0 0 20px oklch(0.59 0.23 255 / 0.45);
+  }
+}
+
+@utility websites-card-media {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+@utility websites-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 500ms ease-out;
+
+  .websites-card-shell:hover & {
+    transform: scale(1.01);
   }
 }
 

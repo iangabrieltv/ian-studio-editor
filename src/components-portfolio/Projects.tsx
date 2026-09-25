@@ -463,6 +463,7 @@ export function Projects() {
                           alt={project.title}
                           className="projects-card-img"
                           loading="lazy"
+                            decoding="async"
                           referrerPolicy="no-referrer"
                         />
                       </div>
@@ -497,6 +498,7 @@ export function Projects() {
                         alt={post.title}
                         className="posts-card-img"
                         loading="lazy"
+                          decoding="async"
                         referrerPolicy="no-referrer"
                       />
                     </div>
@@ -530,6 +532,7 @@ export function Projects() {
                         alt={post.title}
                         className="agency-card-img"
                         loading="lazy"
+                          decoding="async"
                         referrerPolicy="no-referrer"
                       />
                     </div>
@@ -578,6 +581,7 @@ export function Projects() {
                             alt={item.alt}
                             className="identity-card-img"
                             loading="lazy"
+                              decoding="async"
                             referrerPolicy="no-referrer"
                           />
                         </div>
@@ -623,6 +627,7 @@ export function Projects() {
                               alt={item.alt}
                               className="identity-card-img"
                               loading="lazy"
+                              decoding="async"
                               referrerPolicy="no-referrer"
                             />
                           </div>
@@ -664,6 +669,7 @@ export function Projects() {
                               alt={post.title}
                               className="aura-card-img"
                               loading="lazy"
+                              decoding="async"
                               referrerPolicy="no-referrer"
                             />
                           </div>
