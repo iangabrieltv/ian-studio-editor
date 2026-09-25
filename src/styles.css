@@ -2872,7 +2872,9 @@
   }
 }
 
-@utility websites-card-left {
+/* Regra comum (fora de @utility) — o Tailwind não emite utilities
+   que contêm apenas media queries */
+.websites-card-left {
   @media (min-width: 640px) and (max-width: 1023px) {
     grid-column: 1 / -1;
   }
