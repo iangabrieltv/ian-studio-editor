@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import { useEffect, useState } from "react";
 import siteAsset from "@/assets/websites/site-dra-gabryella.png.asset.json";
 import schedulingAsset from "@/assets/websites/barbara-agendamento.webp.asset.json";
 import linksAsset from "@/assets/websites/barbara-links.webp.asset.json";
@@ -19,19 +19,19 @@ const WEBSITE_PROJECTS: WebsiteProjectItem[] = [
   {
     id: "site-dra-gabryella",
     image: siteImg,
-        alt: "Site da Dra. Gabryella Nunes",
+    alt: "Site da Dra. Gabryella Nunes",
     position: "left",
   },
   {
     id: "linkbio-barbara-cardoso-1",
     image: linkbio1Img,
-        alt: "Página de agendamento da Bárbara Cardoso",
+    alt: "Página de agendamento da Bárbara Cardoso",
     position: "center",
   },
   {
     id: "linkbio-barbara-cardoso-2",
     image: linkbio2Img,
-        alt: "Página de links da Bárbara Cardoso",
+    alt: "Página de links da Bárbara Cardoso",
     position: "right",
   },
 ];
@@ -88,14 +88,12 @@ export function Websites() {
           </h2>
         </div>
 
-        {/* Composição Horizontal no Desktop: SITE (~56%), LINK BIO 1 (~22%), LINK BIO 2 (~22%) */}
-        {/* Cards de vidro transparente, compactos, sem textos internos ou botões de aumentar */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.927fr_0.269fr_0.562fr] gap-4 sm:gap-5 lg:gap-6 items-start">
+        <div className="websites-gallery-grid">
           {WEBSITE_PROJECTS.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative flex w-full items-start justify-center overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,0.5),0_0_24px_rgba(79,111,255,0.2)] cursor-pointer"
+              className={`websites-card-shell websites-card-${project.position}`}
               role="button"
               tabIndex={0}
               aria-label="Clique para visualizar a imagem"
@@ -106,14 +104,14 @@ export function Websites() {
                 }
               }}
             >
-              {/* Imagem com transparência ao redor e proporção original preservada */}
-              <div className="flex w-full items-start justify-center overflow-hidden rounded-xl">
+              <div className="websites-card-media">
                 <img
                   src={project.image}
                   alt={project.alt}
-                  className="block h-auto w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+                  className="websites-card-img"
                   referrerPolicy="no-referrer"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -151,6 +149,7 @@ export function Websites() {
                 alt={selectedProject.alt}
                 className="max-h-[calc(92vh-40px)] max-w-full w-auto h-auto object-contain rounded-xl shadow-2xl"
                 referrerPolicy="no-referrer"
+                decoding="async"
               />
             </div>
           </div>

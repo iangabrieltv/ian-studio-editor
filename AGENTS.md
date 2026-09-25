@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- User-uploaded portfolio images should be stored as Lovable Assets `.asset.json` pointers, not committed binary files, to keep the app lightweight.
