@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
-import siteAsset from "@/assets/websites/site-dra-gabryella.png.asset.json";
+import siteAsset from "@/assets/websites/site-dra-gabryella.webp.asset.json";
 import schedulingAsset from "@/assets/websites/barbara-agendamento.webp.asset.json";
 import linksAsset from "@/assets/websites/barbara-links.webp.asset.json";
 
