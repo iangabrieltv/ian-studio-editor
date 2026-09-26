@@ -27,6 +27,41 @@ export default function App() {
     opacity: 0,
   });
 
+  // Imagens surgem suavemente quando chegam na tela
+  useEffect(() => {
+    const seen = new WeakSet<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const img = e.target as HTMLImageElement;
+          io.unobserve(img);
+          const show = () => img.classList.add("img-revealed");
+          if (img.complete && img.naturalWidth) show();
+          else {
+            img.addEventListener("load", show, { once: true });
+            img.addEventListener("error", show, { once: true });
+          }
+        });
+      },
+      { rootMargin: "200px 0px" },
+    );
+    const scan = () =>
+      document.querySelectorAll("img[loading='lazy']").forEach((img) => {
+        if (seen.has(img)) return;
+        seen.add(img);
+        img.classList.add("img-reveal");
+        io.observe(img);
+      });
+    scan();
+    const mo = new MutationObserver(scan);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
+  }, []);
+
   useEffect(() => {
     const updateIndicator = () => {
       if (!navRef.current) return;
