@@ -2992,3 +2992,14 @@
     transition: none !important;
   }
 }
+
+img.img-reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+img.img-reveal.img-revealed {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  img.img-reveal { transition: opacity 0.2s ease; }
+}
