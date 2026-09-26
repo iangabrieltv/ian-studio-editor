@@ -82,7 +82,7 @@ export const getGithubSyncStatus = createServerFn({ method: "GET" }).handler(
       lastCommit: last
         ? {
             sha: last.sha.slice(0, 7),
-            message: last.commit.message.split("\n")[0],
+            message: last.commit.message.split("\n")[0] ?? "",
             author: last.commit.author.name,
             date: last.commit.author.date,
             url: last.html_url,
