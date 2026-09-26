@@ -15,7 +15,7 @@ export interface GithubSyncStatus {
     author: string;
     date: string;
     url: string;
-  };
+  } | undefined;
   pushedAt?: string;
   error?: string;
 }
